@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: berton
+  name: leandro
 
 ---
 
@@ -9,7 +9,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: containergo-conf
-  namespace: berton
+  namespace: leandro
 data:
   FOO: "hola "
   BAR: "mundo"
@@ -20,7 +20,7 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: containergo-secrets
-  namespace: berton
+  namespace: leandro
 type: Opaque
 data:
   SUPERSECRETUSER: ZWxvbg==
@@ -32,7 +32,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: containergo
-  namespace: berton
+  namespace: leandro
 spec:
   replicas: 2
   selector:
@@ -76,7 +76,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: containergo-service
-  namespace: berton
+  namespace: leandro
 spec:
   type: ClusterIP
   selector:
@@ -94,7 +94,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: containergo-ingress
-  namespace: berton
+  namespace: leandro
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
