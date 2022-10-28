@@ -45,7 +45,7 @@ spec:
     spec:
       containers:
       - name: containergo
-        image: docker.io/bertontheone/container_go
+        image: docker.io/leariel98/web-go
         ports:
         - containerPort: 8080
         env:
